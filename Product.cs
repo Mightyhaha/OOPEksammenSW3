@@ -3,9 +3,11 @@ namespace OOPEksammenSW3
     class Product
     {
 
-        int id;
-        string name;
-        int price;
+        private int id;
+        private string name;
+        private int price;
+
+        
 
 
 
