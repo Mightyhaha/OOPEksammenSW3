@@ -1,10 +1,14 @@
-namespace OOPEksammenSW3
+namespace OOPEksammenSW3.Products
 {
-    class Product
+    public class Product
     {
+        public Id<Product> Id { get => _id; }
+        public Ddk Price {get => _price; }
 
-        private int id;
-        private string name;
+        private Id<Product> _id = new Id<Product>();
+
+        private string _name = new Name();
+        private Ddk
         private int price;
 
         
