@@ -8,7 +8,8 @@ namespace OOPEksammenSW3.Products
         private Id<Product> _id = new Id<Product>();
 
         private string _name = new Name();
-        private Ddk
+
+        private Ddk _price = new Price();
         private int price;
 
         
