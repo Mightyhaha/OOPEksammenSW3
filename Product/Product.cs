@@ -1,4 +1,6 @@
-namespace OOPEksammenSW3.Products
+using OOPEksammenSW3.Currency
+
+namespace OOPEksammenSW3.Product
 {
     public class Product
     {
@@ -9,7 +11,7 @@ namespace OOPEksammenSW3.Products
 
         private string _name = new Name();
 
-        private Ddk _price = new Price();
+        private DanskKrone _price = new Price();
         private int price;
 
         
