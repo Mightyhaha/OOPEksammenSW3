@@ -1,6 +1,4 @@
-using System;
-
-namespace OOPEksammenSW3.Currency
+namespace OOPEksammenSW3.Global
 {
     public class DanskKrone
     {

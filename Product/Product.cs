@@ -1,26 +1,38 @@
-using OOPEksammenSW3.Currency
+using OOPEksammenSW3.Global;
+using OOPEksammenSW3.Product;
 
 namespace OOPEksammenSW3.Product
 {
     public class Product
     {
         public Id<Product> Id { get => _id; }
-        public Ddk Price {get => _price; }
+        public DanskKrone Price {get => _price; }
+public bool IsActive { get => _IsActive; }
 
-        private Id<Product> _id = new Id<Product>();
+        public bool CanBeBoughtOnCredit { get => _canBeBoughtOnCredit; }
 
-        private string _name = new Name();
+        private Id<Product> _id;
 
-        private DanskKrone _price = new Price();
-        private int price;
+        private Name _name;
 
-        
+        private DanskKrone _price = new DanskKrone(0);
 
+        private bool _IsActive = false;
 
+        private bool _canBeBoughtOnCredit = false;
 
-        public void CanBeBoughtOnCredit()
+        public override string ToString()
         {
+            return _id + " " + _name.String + " " + _price.ToString();
+        }
 
+        public Product(Id<Product> id, Name name, DanskKrone price, bool isActive, bool canBeBoughtOnCredit)
+        {
+            _id = id;
+            _name = name;
+            _price = price;
+            _IsActive = isActive;
+            _canBeBoughtOnCredit = canBeBoughtOnCredit;
         }
     }
 }
