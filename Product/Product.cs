@@ -1,5 +1,5 @@
 using OOPEksammenSW3.Global;
-using OOPEksammenSW3.Product;
+
 
 namespace OOPEksammenSW3.Product
 {
@@ -28,7 +28,7 @@ public bool IsActive { get => _IsActive; }
 
         public Product(Id<Product> id, Name name, DanskKrone price, bool isActive, bool canBeBoughtOnCredit)
         {
-            _id = id;
+            _id = new Id<Product>(id);
             _name = name;
             _price = price;
             _IsActive = isActive;

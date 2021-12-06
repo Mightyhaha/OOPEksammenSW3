@@ -1,7 +1,8 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace OOPEksammenSW3.Users {
+namespace OOPEksammenSW3.User 
+{
 public class Username
     {
         private static readonly Regex _validator = new Regex(@"^([a-z0-9_])+$");
@@ -27,6 +28,11 @@ public class Username
         public override string ToString()
         {
             return _string;
+        }
+
+        public Username(string nameString)
+        {
+            String = nameString;
         }
     }
 }

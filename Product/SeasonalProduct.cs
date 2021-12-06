@@ -1,5 +1,4 @@
 using System;
-using OOPEksammenSW3.Product;
 using OOPEksammenSW3.Global;
 
 namespace OOPEksammenSW3.Product

@@ -1,43 +1,52 @@
 using System;
 using System.Net.Mail;
+using OOPEksammenSW3.User;
+using OOPEksammenSW3.Global;
 
-
-namespace OOPEksammenSW3
+namespace OOPEksammenSW3.User
 {
     public class User : IComparable<User>
     {
         public event EventHandler BelowBalanceThreshold;
-        public Id<User> Id {get => _id; }
 
-        public Username Username {get => _userName; }
+        private static DanskKrone _balanceThreshold = new DanskKrone(50);
 
-        public Bdk Balance
+        public Id<User> Id { get => _id; }
+
+        // public Name FirstName { get => _firstName; }
+
+        // public Name LastName { get => _lastName; }
+
+        // public MailAddress Email { get => _email; }
+
+        public Username Username { get => _userName; }
+
+        public DanskKrone Balance
         {
             get => _balance;
-            set {
+            set
+            {
                 _balance = value;
-                if (_balance < _balanceThreshold){
-                    OnBelowBalanceThreshold(new EventArgs());
-                }
+                if (_balance < _balanceThreshold)
+                    OnBelowBalanceThreshold(EventArgs.Empty);
             }
         }
 
+        private Id<User> _id;
 
-        private Id<User> _id = new Id<User>();
+        private Name _firstName;
 
-        private Name _firstName = new Name();
-
-        private Name _lastName = new Name();
+        private Name _lastName;
 
         private MailAddress _email = new MailAddress("nil@nil");
 
-        private Username _userName = new Username();
+        private Username _userName;
 
-        private Ddk _balance = new Ddk(0);
+        private DanskKrone _balance = new DanskKrone(0);
 
-        public override ToString() {
-
-        return _firstName.String + " " + _lastName.String + "(" + _email.Address + ")";
+        public override string ToString()
+        {
+            return $"{_firstName.String} {_lastName.String} ({_email.Address}) BALANCE : {_balance}";
         }
 
         public override bool Equals(object obj)
@@ -56,21 +65,26 @@ namespace OOPEksammenSW3
         {
             return _id.Number;
         }
+
         public int CompareTo(User other)
         {
             return Id.Number.CompareTo(other.Id.Number);
         }
+
         protected virtual void OnBelowBalanceThreshold(EventArgs e)
         {
             EventHandler handler = BelowBalanceThreshold;
             handler?.Invoke(this, e);
         }
-        public User(Name firstName, Name lastName, MailAddress email, Username username)
+
+        public User(int id, Name firstName, Name lastName, Username username, DanskKrone balance, MailAddress email)
         {
+            _id = new Id<User>(id);
+            _userName = username;
             _firstName = firstName;
             _lastName = lastName;
+            _balance = balance;
             _email = email;
         }
-
     }
 }

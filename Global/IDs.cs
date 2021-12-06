@@ -21,7 +21,7 @@ namespace OOPEksammenSW3.Global
                 }
                 else
                 {
-                    throw new System.ArgumentException("Id has allready been used");
+                    throw new System.ArgumentException("Id has already been used");
                 }
             }
         }

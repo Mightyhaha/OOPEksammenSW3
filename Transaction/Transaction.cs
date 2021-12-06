@@ -1,8 +1,8 @@
 using System;
-using OOPEksammenSW3.Currency;
-using OOPEksammenSW3.Users;
+using OOPEksammenSW3.Global;
+using OOPEksammenSW3.User;
 
-namespace OOPEksammenSW3.Transcation
+namespace OOPEksammenSW3.Transaction
 {
     internal abstract class Transaction
     {
