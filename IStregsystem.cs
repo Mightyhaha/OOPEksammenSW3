@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using OOPEksammenSW3.Transaction;
+using OOPEksammenSW3.Transactions;
 using OOPEksammenSW3.Global;
-using OOPEksammenSW3.Product;
-using OOPEksammenSW3.User;
+using OOPEksammenSW3.Products;
+using OOPEksammenSW3.Users;
 
 namespace OOPEksammenSW3
 {

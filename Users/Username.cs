@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace OOPEksammenSW3.User 
+namespace OOPEksammenSW3.Users 
 {
 public class Username
     {

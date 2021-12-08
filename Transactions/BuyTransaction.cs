@@ -1,9 +1,10 @@
 using System;
-using OOPEksammenSW3.Product;
+using OOPEksammenSW3.Products;
 using OOPEksammenSW3.Global;
-using OOPEksammenSW3.User;
+using OOPEksammenSW3.Users;
+using OOPEksammenSW3.Exceptions;
 
-namespace OOPEksammenSW3.Transaction
+namespace OOPEksammenSW3.Transactions
 {
     internal class BuyTransaction : Transaction
     {
@@ -23,11 +24,11 @@ namespace OOPEksammenSW3.Transaction
             }
             else if (!_product.IsActive)
             {
-                throw new ProductIsNotActiveException($"{_product.ToString()} is not Active");
+                throw new ProductDoesExist($"{_product.ToString()} is not Active");
             }
             else if (!_product.CanBeBoughtOnCredit)
             {
-                throw new InsufficientCredistException
+                throw new InsufficientCredit
                     ($"{_user.ToString()} does not have enough credit to buy {_product.ToString()}");
             }
             else

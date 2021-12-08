@@ -1,14 +1,25 @@
 using System;
 using OOPEksammenSW3.Global;
 
-namespace OOPEksammenSW3.Product
+namespace OOPEksammenSW3.Products
 {
-     internal class SeasonalProduct : Product
+ internal class SeasonalProduct : Product
     {
-        public DateTime SeasonStartDate
+        public override bool IsActive
+        {
+            get
+            {
+                return _isActive 
+                       && SeasonStartDate <= DateTime.Now 
+                       && DateTime.Now <= SeasonEndDate;
+            }
+            set => _isActive = value;
+        }
+
+        private DateTime SeasonStartDate
         {
             get => _seasonStartDate;
-            private set
+            set
             {
                 if (value < _seasonEndDate)
                 {
@@ -21,10 +32,10 @@ namespace OOPEksammenSW3.Product
             }
         }
 
-        public DateTime SeasonEndDate
+        private DateTime SeasonEndDate
         {
             get => SeasonEndDate;
-            private set
+            set
             {
                 if (_seasonStartDate < value)
                 {
@@ -37,10 +48,12 @@ namespace OOPEksammenSW3.Product
             }
         }
 
+        private bool _isActive;
+
         private DateTime _seasonStartDate = new DateTime();
         private DateTime _seasonEndDate = new DateTime();
 
-        public SeasonalProduct(Id<Product> id, Name name, DanskKrone price, bool active, bool canBeBoughtOnCredit,
+        public SeasonalProduct(int id, Name name, DanskKrone price, bool active, bool canBeBoughtOnCredit,
         DateTime seasonStartDate, DateTime seasonEndDate)
         : base(id, name, price, active, canBeBoughtOnCredit)
         {

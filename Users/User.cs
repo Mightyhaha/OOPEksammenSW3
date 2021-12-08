@@ -1,9 +1,9 @@
 using System;
 using System.Net.Mail;
-using OOPEksammenSW3.User;
+using OOPEksammenSW3.Users;
 using OOPEksammenSW3.Global;
 
-namespace OOPEksammenSW3.User
+namespace OOPEksammenSW3.Users
 {
     public class User : IComparable<User>
     {
