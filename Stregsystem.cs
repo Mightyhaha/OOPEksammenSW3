@@ -9,7 +9,7 @@ using System.IO;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
-namespace Stregsystem
+namespace OOPEksammenSW3
 {
     internal class Stregsystem : IStregsystem
     {

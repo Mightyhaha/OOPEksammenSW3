@@ -13,12 +13,6 @@ namespace OOPEksammenSW3.User
 
         public Id<User> Id { get => _id; }
 
-        // public Name FirstName { get => _firstName; }
-
-        // public Name LastName { get => _lastName; }
-
-        // public MailAddress Email { get => _email; }
-
         public Username Username { get => _userName; }
 
         public DanskKrone Balance
