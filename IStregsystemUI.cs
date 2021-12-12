@@ -1,6 +1,7 @@
 using OOPEksammenSW3.Transactions;
 using OOPEksammenSW3.Products;
 using OOPEksammenSW3.Users;
+using OOPEksammenSW3.Commands;
 using System;
 
 namespace OOPEksammenSW3

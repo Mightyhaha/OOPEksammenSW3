@@ -4,6 +4,7 @@ using OOPEksammenSW3.Transactions;
 using OOPEksammenSW3.Global;
 using OOPEksammenSW3.Products;
 using OOPEksammenSW3.Users;
+using OOPEksammenSW3.Commands;
 
 namespace OOPEksammenSW3
 {
