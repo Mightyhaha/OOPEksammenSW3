@@ -17,16 +17,12 @@ namespace OOPEksammenSW3.Commands
             _stregsystem = stregsystem;
         }
 
-        // This routine will parse a command string and turn it into a command that interacts with
-        // the a IstregsystemUI and Istregsystem.
         public ICommand Parse(string command)
         {
-            // Take the command string a split it into a verb and several nouns
             IEnumerable<string> terms = command.Split(" ");
             string verb = terms.First();
             IList<string> nouns = terms.Skip(1).ToList();
 
-            // Switch on the verb and handle
             switch (verb)
             {
                 case ":q" or ":quit":
@@ -52,7 +48,7 @@ namespace OOPEksammenSW3.Commands
             IList<int> productIdList = nouns.Select(x => int.Parse(x)).ToList();
 
             if (nouns.Count <= 0)
-                return new GetUserInformation(_stregsystem, _ui, username);
+                return new GetUserInformationCommand(_stregsystem, _ui, username);
             else
                 return new BuyCommand(_stregsystem, _ui, username, productIdList);
         }
@@ -126,7 +122,7 @@ namespace OOPEksammenSW3.Commands
         private ICommand ParseQuit(IList<string> nouns)
         {
             if (nouns.Count() == 0)
-                return new Quit(_ui);
+                return new QuitCommand(_ui);
             throw new ArgumentException();
         }
     }

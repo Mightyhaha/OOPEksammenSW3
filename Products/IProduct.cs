@@ -1,6 +1,6 @@
 using OOPEksammenSW3.Global;
 
-namespace Stregsystem.Products
+namespace OOPEksammenSW3.Products
 {
     public interface IProduct
     {

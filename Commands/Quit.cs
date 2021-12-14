@@ -4,7 +4,7 @@ namespace OOPEksammenSW3.Commands
     {
         private IStregsystemUI _ui;
 
-        public Quit(IStregsystemUI ui)
+        public QuitCommand(IStregsystemUI ui)
         {
             _ui = ui;
         }
